@@ -1,0 +1,11 @@
+D:\c#\Frist_Example_Of_c242\Test Score Applicaation\Test Score Applicaation\obj\Debug\Test Score Applicaation.csproj.AssemblyReference.cache
+D:\c#\Frist_Example_Of_c242\Test Score Applicaation\Test Score Applicaation\obj\Debug\Test_Score_Applicaation.Form1.resources
+D:\c#\Frist_Example_Of_c242\Test Score Applicaation\Test Score Applicaation\obj\Debug\Test_Score_Applicaation.Properties.Resources.resources
+D:\c#\Frist_Example_Of_c242\Test Score Applicaation\Test Score Applicaation\obj\Debug\Test Score Applicaation.csproj.GenerateResource.cache
+D:\c#\Frist_Example_Of_c242\Test Score Applicaation\Test Score Applicaation\obj\Debug\Test Score Applicaation.csproj.CoreCompileInputs.cache
+D:\c#\Frist_Example_Of_c242\Test Score Applicaation\Test Score Applicaation\bin\Debug\Test Score Applicaation.exe.config
+D:\c#\Frist_Example_Of_c242\Test Score Applicaation\Test Score Applicaation\bin\Debug\Test Score Applicaation.exe
+D:\c#\Frist_Example_Of_c242\Test Score Applicaation\Test Score Applicaation\bin\Debug\Test Score Applicaation.pdb
+D:\c#\Frist_Example_Of_c242\Test Score Applicaation\Test Score Applicaation\obj\Debug\Test Score Applicaation.exe
+D:\c#\Frist_Example_Of_c242\Test Score Applicaation\Test Score Applicaation\obj\Debug\Test Score Applicaation.pdb
+D:\c#\Frist_Example_Of_c242\Test Score Applicaation\Test Score Applicaation\obj\Debug\Test Score Applicaation.exe.config

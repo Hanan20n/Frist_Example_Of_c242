@@ -1,0 +1,52 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\c#\\Frist_Example_Of_c242\\week_two\\Test Score Applicaation\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4B067A1F-9870-4FBF-836B-92F103387E7F}|Test Score Applicaation\\Test Score Applicaation.csproj|d:\\c#\\frist_example_of_c242\\week_two\\test score applicaation\\test score applicaation\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B067A1F-9870-4FBF-836B-92F103387E7F}|Test Score Applicaation\\Test Score Applicaation.csproj|solutionrelative:test score applicaation\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B067A1F-9870-4FBF-836B-92F103387E7F}|Test Score Applicaation\\Test Score Applicaation.csproj|D:\\c#\\Frist_Example_Of_c242\\week_two\\Test Score Applicaation\\test score applicaation\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4B067A1F-9870-4FBF-836B-92F103387E7F}|Test Score Applicaation\\Test Score Applicaation.csproj|solutionrelative:test score applicaation\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "D:\\c#\\Frist_Example_Of_c242\\week_two\\Test Score Applicaation\\Test Score Applicaation\\Form1.cs",
+              "RelativeDocumentMoniker": "Test Score Applicaation\\Form1.cs",
+              "ToolTip": "D:\\c#\\Frist_Example_Of_c242\\week_two\\Test Score Applicaation\\Test Score Applicaation\\Form1.cs",
+              "RelativeToolTip": "Test Score Applicaation\\Form1.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAADwvyEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-28T18:11:17.556Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "D:\\c#\\Frist_Example_Of_c242\\week_two\\Test Score Applicaation\\Test Score Applicaation\\Form1.cs",
+              "RelativeDocumentMoniker": "Test Score Applicaation\\Form1.cs",
+              "ToolTip": "D:\\c#\\Frist_Example_Of_c242\\Test Score Applicaation\\Test Score Applicaation\\Form1.cs [Design]",
+              "RelativeToolTip": "..\\..\\Test Score Applicaation\\Test Score Applicaation\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-28T18:09:04.831Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
