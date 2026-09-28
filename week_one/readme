@@ -1,0 +1,129 @@
+Chapter 1: Introduction to Visual C#
+Topics
+1.1 Objects
+
+1.2 Getting Started with Visual Studio
+
+2.1 Getting Started with Forms and Controls
+
+2.2 Creating the GUI for Your First Visual C# Application   
+
+2.3 Introduction to C# Code   
+
+2.4 Writing Code for the Hello World Application   
+
+2.5 Label Controls   
+
+2.6 Making Sense of IntelliSense   
+
+2.7 PictureBox Controls   
+
+2.8 Comments, Blank Lines, and Indentation   
+
+2.9 Writing the Code to Close an Application’s Form   
+
+2.10 Dealing with Syntax Errors
+
+What is C#?
+C# (pronounced “C-Sharp”) is a modern, general-purpose programming language developed by Microsoft.
+
+1.1 Objects & Controls
+Object: A program component that contains data (properties) and performs operations (methods). Programs use objects to perform specific tasks.
+
+Controls: Objects that are visible in a program's GUI. The most commonly used controls are Labels, Buttons, and TextBoxes.
+
+Class: Code that describes a particular type of object.
+
+.NET Framework: A collection of classes and other code used to create programs for the Windows operating system.
+
+1.2 Getting Started with Visual Studio
+Visual Studio is a professional Integrated Development Environment (IDE). Key components of the environment include:
+
+Designer Window: Used to visually design the application's user interface.
+
+Solution Explorer Window: Displays and manages project files and solutions.
+
+Properties Window: Displays and allows you to edit the properties of selected controls or forms.
+
+Toolbox: A panel used to select and add controls to a form.
+
+2.1 Getting Started with Forms and Controls
+When you create a new Windows Forms App, an empty form named Form1 is automatically created.
+
+Properties Window: Properties govern the appearance and behavior of GUI objects. Example: The Text property sets the title text displayed on the form or control.
+
+Naming Rules for Controls (Identifiers):
+
+The first character must be a letter (A–Z, a–z) or an underscore (_).
+
+Names cannot contain spaces.
+
+2.2 Creating the GUI for Your First Visual C# Application
+Designing the GUI involves placing a Form and a Button control onto the workspace. When the button is clicked, it will display the message "Hello World".
+
+2.3 Introduction to C# Code
+C# source code is structured in three primary hierarchical levels:
+
+Namespace: A container that holds classes.
+
+Class: A container that holds methods.
+
+Method: A group of statements that execute to perform a specific task.
+
+Default Source Code Files:
+
+Program.cs: Contains the startup code executed when the application runs.
+
+Form1.cs: Contains the code associated with the Form1 user interface.
+
+Event-Driven Programming: GUI programs respond to user actions (events) such as clicking a button or pressing a key. Double-clicking a control in the Designer automatically generates an Event Handler method.
+
+2.4 Writing Code for the Hello World Application
+To display a pop-up message box, use the MessageBox.Show method:
+
+C#
+private void messageButton_Click(object sender, EventArgs e)
+{
+    MessageBox.Show("Hello World");
+}
+2.5 Label Controls
+Label Control: Used to display non-editable text or program output on a form.
+
+Key Properties: Text, Name, Font, BorderStyle, AutoSize, and TextAlign.
+
+Displaying output programmatically via code:
+
+C#
+answerLabel.Text = "Jamhuuriya University";
+Clearing text in a Label control:
+
+C#
+answerLabel.Text = "";
+2.6 Making Sense of IntelliSense
+IntelliSense: An intelligent code completion tool that suggests matching keywords, variables, methods, and properties as you type, reducing coding errors and typing time.
+
+2.7 PictureBox Controls
+PictureBox: A control used to display graphic images on a form.
+
+Key Properties: Image, SizeMode, and Visible.
+
+Sequential Execution: Code statements execute sequentially in the exact order they are written from top to bottom.
+
+2.8 Comments, Blank Lines, and Indentation
+Single-Line Comment: Begins with two forward slashes (//).
+
+Block Comment: Begins with /* and ends with */.
+
+Blank lines and proper indentation improve human readability without affecting program execution.
+
+2.9 Writing the Code to Close an Application’s Form
+To close the current active form programmatically, call the Close() method on this:
+
+C#
+private void exitButton_Click(object sender, EventArgs e)
+{
+    // Close the form.
+    this.Close();
+}
+2.10 Dealing with Syntax Errors
+Syntax Error: A violation of the programming language's grammar rules. Visual Studio highlights syntax errors with a red wavy underline (jagged line) in the editor window. Attempting to build or execute a project with syntax errors will result in a build error dialog.
