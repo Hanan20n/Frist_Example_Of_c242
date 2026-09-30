@@ -1,0 +1,10 @@
+D:\c#\frist system in c#\class asegment\tip_tax_and_total\tip_tax_and_total\bin\Debug\tip_tax_and_total.exe.config
+D:\c#\frist system in c#\class asegment\tip_tax_and_total\tip_tax_and_total\bin\Debug\tip_tax_and_total.exe
+D:\c#\frist system in c#\class asegment\tip_tax_and_total\tip_tax_and_total\bin\Debug\tip_tax_and_total.pdb
+D:\c#\frist system in c#\class asegment\tip_tax_and_total\tip_tax_and_total\obj\Debug\tip_tax_and_total.csproj.AssemblyReference.cache
+D:\c#\frist system in c#\class asegment\tip_tax_and_total\tip_tax_and_total\obj\Debug\tip_tax_and_total.txtFood.resources
+D:\c#\frist system in c#\class asegment\tip_tax_and_total\tip_tax_and_total\obj\Debug\tip_tax_and_total.Properties.Resources.resources
+D:\c#\frist system in c#\class asegment\tip_tax_and_total\tip_tax_and_total\obj\Debug\tip_tax_and_total.csproj.GenerateResource.cache
+D:\c#\frist system in c#\class asegment\tip_tax_and_total\tip_tax_and_total\obj\Debug\tip_tax_and_total.csproj.CoreCompileInputs.cache
+D:\c#\frist system in c#\class asegment\tip_tax_and_total\tip_tax_and_total\obj\Debug\tip_tax_and_total.exe
+D:\c#\frist system in c#\class asegment\tip_tax_and_total\tip_tax_and_total\obj\Debug\tip_tax_and_total.pdb
