@@ -1,0 +1,83 @@
+# Airline Ticket Booking System (C# Windows Forms)
+
+A desktop application built with **C#** and **Windows Forms** designed to manage airline ticket bookings. The application validates passenger information, applies strict booking rules, calculates ticket costs based on age and quantity discounts, handles baggage fees, and includes optional travel insurance.
+
+---
+
+## 🚀 Features & Functionality
+
+### 1. Personal Information & Validation Rules
+The system validates user input before processing any booking using `TryParse` to prevent runtime crashes:
+* **Passenger Age:** Must be an integer between **1 and 100 years**.
+* **Number of Tickets:** Must be an integer between **1 and 5 tickets**.
+* **Baggage Weight:** Must be a valid positive number and cannot exceed **50 kg per passenger**.
+* **Class Restrictions:** Passengers under **12 years old** are prohibited from booking **First Class**.
+
+### 2. Cost & Discount Logic
+The total booking cost is dynamically calculated based on the following rules:
+
+* **Base Ticket Price by Class:**
+  * First Class: `$250`
+  * Business Class: `$180`
+  * Normal Class: `$100`
+
+* **Ticket Quantity Discounts:**
+  * `1–2 Tickets`: No discount ($0\%$)
+  * `3–4 Tickets`: $5\%$ discount
+  * `5 Tickets`: $10\%$ discount
+
+* **Age Discounts:**
+  * `Below 12 years`: $20\%$ child discount
+  * `60 years or above`: $10\%$ senior discount
+
+* **Additional Charges:**
+  * **Travel Insurance:** Optional `$25` per ticket.
+  * **Baggage Allowance:** Free up to **20 kg per passenger**. Any excess weight incurs an extra charge.
+
+---
+
+## 🛠️ Tech Stack & Requirements
+
+* **Language:** C#
+* **Framework:** .NET Framework / .NET Desktop Development
+* **UI Framework:** Windows Forms (WinForms)
+* **IDE:** Visual Studio 2019 / 2022
+
+---
+
+## 📌 Form Controls Setup
+
+Ensure your Windows Form controls are named as follows:
+
+| Control Type | Control Name | Purpose |
+| :--- | :--- | :--- |
+| `TextBox` | `txtPassengerName` | Input passenger name |
+| `TextBox` | `txtPassengerAge` | Input passenger age |
+| `TextBox` | `txtNumTickets` | Input number of tickets |
+| `TextBox` | `txtBaggageWeight` | Input baggage weight in kg |
+| `RadioButton` | `rbFirstClass` | Select First Class |
+| `RadioButton` | `rbNormalClass` | Select Normal Class |
+| `RadioButton` | `rbBusinessClass` | Select Business Class |
+| `CheckBox` | `chkTravelInsurance` | Option for travel insurance ($25/ticket) |
+| `ListBox` | `lstBookingDetails` | Display calculated receipt / rejection notice |
+| `Button` | `btnCalculate` | Validate inputs & calculate total cost |
+| `Button` | `btnClear` | Clear all inputs |
+| `Button` | `btnExit` | Close the application |
+
+---
+
+## 💻 How to Run the Project
+
+1. Open **Visual Studio**.
+2. Create a new **Windows Forms App (.NET Framework)** project named `AirlineTicketBookingSystem`.
+3. Design the interface according to the control names above.
+4. Replace the code in `Form1.cs` with the provided application logic.
+5. Press **F5** or click **Start** to run the application.
+
+---
+
+## 📷 System Interface Overview
+
+* **Calculate Button:** Validates all fields, checks age restrictions, calculates final pricing, and presents a detailed summary in the booking details box.
+* **Clear Button:** Resets all input fields and clears the output box.
+* **Exit Button:** Closes the application safely.
