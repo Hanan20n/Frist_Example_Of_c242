@@ -1,100 +1,207 @@
-# 📂 Week Four — File Handling in C#
+# 🔁 Week Four — Loops in C#
 
-## 📌 Overview | Dulmarka
+## 📘 Overview | Dulmarka
 
-This folder contains my **Week Four C# practice** focused on working with text files in a Windows Forms Application.
+This week focuses on **loops** in C#, which allow a program to repeat instructions while a condition is true or for a planned number of repetitions.
 
-Toddobaadkan waxaan ku tababaranayaa sida C# loogu akhriyo xogta text file, looga saaro item gaar ah, iyo sida loo tirtiro file dhan. Waxaan sidoo kale baranayaa sida file operations loogu xiro Windows Forms controls sida `Button`, `ListBox`, iyo `MessageBox`.
+Toddobaadkan waxaan baranayaa **loops**: sida amarro (statements) marar badan loo fuliyo anigoon isla code-ka mar kasta dib u qorin. Chapter-ka PowerPoint-ku wuxuu daboolayaa `while`, `++` iyo `--`, `for`, iyo `do-while`.
 
 ## 🎯 Learning Objectives | Ujeeddooyinka
 
-- Understand basic file handling using the `System.IO` namespace.
-- Read text files using different methods.
-- Check whether a file exists before using it.
-- Remove a selected item from a text file.
-- Delete a complete file after user confirmation.
-- Display file contents and messages in a Windows Forms interface.
+- Explain what a loop is and why it is useful.
+- Use a `while` loop and understand its condition.
+- Identify and prevent infinite loops.
+- Increment and decrement variables using `++` and `--`.
+- Explain prefix and postfix notation.
+- Use `for` loops with initialization, test, and update expressions.
+- Use a `do-while` loop and compare it with `while`.
 
-## 🧰 Methods Practiced | Methods-ka La Tababartay
+## 1. What Is a Loop? | Waa maxay Loop?
 
-### 1. `StreamReader` and `File.OpenText()`
+A **loop** repeats a statement or a group of statements. Instead of writing the same instruction several times, we write it once inside a loop.
 
-These are used to open and read a text file one line at a time.
+Tusaale ahaan, haddii aan rabo inaan “Hello” soo bandhigo shan jeer, loop ayaa iga caawinaya inaan hal mar qoro code-ka oo uu program-ku ku celiyo.
 
-Waxaa la adeegsadaa `ReadLine()` si line kasta loo akhriyo, halka `EndOfStream` lagu hubiyo in dhammaadka file-ka la gaaray.
+## 2. The `while` Loop
 
-### 2. `File.ReadAllLines()`
+A `while` loop repeats its body as long as its Boolean condition is `true`. It is a **pretest loop** because it checks the condition before executing the body.
 
-Reads all lines from a text file and returns them as a string array (`string[]`).
+```csharp
+int count = 0;
 
-Method-kan wuxuu xogta oo dhan hal mar ugu soo qaadaa array, kadibna `ListBox.Items.AddRange()` ayaa lagu soo bandhigi karaa.
+while (count < 5)
+{
+    MessageBox.Show("Hello");
+    count++;
+}
+```
 
-### 3. `File.ReadLines()`
+**Step-by-step | Tallaabo-tallaabo**
 
-Reads a file as a sequence of lines, which can be processed using `foreach`.
+1. `int count = 0;` creates a counter variable and starts it at zero.
+2. `count < 5` checks whether the counter is less than five.
+3. If the condition is true, the message appears.
+4. `count++` increases the counter by one.
+5. The condition is checked again. When `count` becomes 5, the condition is false and the loop stops.
 
-Habkani wuxuu kuu oggolaanayaa inaad line kasta si isdaba-joog ah u process-gareyso, wuxuuna ku habboonaan karaa files waaweyn marka aan loo baahnayn in dhammaan lines-ka hal mar memory-ga la geliyo.
+This loop displays the message five times.
 
-### 4. `File.Exists()`
+### When the condition starts as false
 
-Checks whether a file exists at the specified path.
+```csharp
+int count = 5;
 
-Waxaa la isticmaalaa ka hor reading ama deleting si loo hubiyo in file-ku jiro, loogana fogaado in operation lagu sameeyo file aan la helin.
+while (count < 5)
+{
+    MessageBox.Show("Hello");
+    count++;
+}
+```
 
-### 5. Deleting a Selected Item
+The body does not execute even once because `5 < 5` is false at the beginning.
 
-The program reads the file lines into a list, removes the selected item, and writes the remaining lines back to the file.
+### Infinite loops | Loop aan dhammaanayn
 
-`ListBox.SelectedItem` wuxuu soo helayaa item-ka user-ku doortay. `Remove()` ayaa item-kaas ka saaraya list-ka, halka `File.WriteAllLines()` dib ugu kaydinayo xogta hadhay.
+An **infinite loop** continues indefinitely because its stopping condition never becomes false. A common mistake is forgetting to update the counter.
 
-### 6. `File.Delete()`
+```csharp
+int count = 0;
 
-Deletes the entire file from the specified location.
+while (count < 5)
+{
+    MessageBox.Show("Hello");
+    // Mistake: count is never increased.
+}
+```
 
-Ka hor inta aan file-ka la tirtirin, program-ku wuxuu user-ka weydiinayaa confirmation isagoo adeegsanaya `MessageBox.Show()` iyo `DialogResult`. Haddii user-ku doorto `Yes`, file-ka waa la tirtirayaa.
+**Important:** Always check that something inside the loop changes the condition, or make sure the loop has a clear exit.
 
-## 🖥️ Application Features | Waxyaabaha App-ku Qabanayo
+## 3. Increment and Decrement Operators
 
-- Read file contents using three different methods.
-- Display text-file lines in a `ListBox`.
-- Check file existence using `File.Exists()`.
-- Delete a selected line/item from the file.
-- Ask for confirmation before deleting the entire file.
-- Show success and error messages through `MessageBox`.
+- `count++` increases the value by 1.
+- `count--` decreases the value by 1.
+- `count += 1` is another way to add 1.
+- `count -= 1` is another way to subtract 1.
+- `count = count + 1` and `count = count - 1` express the same basic changes.
 
-## 🛠️ Technologies Used
+Example:
 
-- **Language:** C#
-- **Application Type:** Windows Forms
-- **IDE:** Microsoft Visual Studio
-- **Namespace:** `System.IO`
-- **File Format:** `.txt`
+```csharp
+int count = 3;
+count++; // count is now 4
+count--; // count is now 3 again
+```
 
-## ▶️ How to Run | Sida Loo Socodsiiyo
+### Prefix versus postfix
 
-1. Open the project in **Microsoft Visual Studio**.
-2. Make sure the text file exists at the path assigned to `filePath`.
-3. Build and run the Windows Forms Application.
-4. Use the reading buttons to display file contents.
-5. Select an item in the `ListBox` before clicking **Delete Selected Item**.
-6. Only click **Delete Entire File** when you really intend to delete the file.
+- **Postfix:** `count++` — the current value is used first in an expression, then incremented.
+- **Prefix:** `++count` — the value is incremented first, then used in the expression.
 
-## ⚠️ Important Notes | Qodobo Muhiim ah
+When these operators are used alone on a line, both increase the variable by one. The difference matters when the operator is part of a larger expression.
 
-- The `filePath` variable must point to a valid location on your computer.
-- An absolute file path from one computer may not work on another computer.
-- Deleting the entire file is a permanent action unless a backup exists.
-- Use a `using` statement with `StreamReader` to ensure the file is closed properly, even if an error occurs.
-- Clear the `ListBox` before loading the file again to avoid duplicate displayed items.
+## 4. The `for` Loop
 
-## 🎓 Learning Outcome | Waxa Aan Bartay
+A `for` loop is useful when a counter controls how many times a loop repeats. Its header contains three parts:
 
-By practicing these methods, I am learning how to work with text files in C# and connect file operations to a graphical user interface.
+```csharp
+for (int count = 0; count < 5; count++)
+{
+    MessageBox.Show("Hello");
+}
+```
 
-Waxaan ku tababartay file reading, checking file existence, deleting individual items, deleting a complete file, iyo isticmaalka `ListBox` iyo `MessageBox` si application-ku ula falgalo user-ka.
+- **Initialization:** `int count = 0` runs once at the start.
+- **Test:** `count < 5` is checked before each iteration.
+- **Update:** `count++` increases the counter after the body runs.
+
+The example displays “Hello” five times, with counter values 0, 1, 2, 3, and 4.
+
+### Other update expressions
+
+Count by tens:
+
+```csharp
+for (int count = 0; count <= 100; count += 10)
+{
+    MessageBox.Show(count.ToString());
+}
+```
+
+Count backwards:
+
+```csharp
+for (int count = 10; count >= 0; count--)
+{
+    MessageBox.Show(count.ToString());
+}
+```
+
+`ToString()` converts the number into text so it can be passed to `MessageBox.Show()`.
+
+## 5. The `do-while` Loop
+
+A `do-while` loop is a **posttest loop**: it executes the body first, then checks the condition. Therefore, its body always executes at least once.
+
+```csharp
+int number = 1;
+
+do
+{
+    MessageBox.Show(number.ToString());
+} while (number < 0);
+```
+
+The message appears once even though `number < 0` is false, because the condition is checked after the body.
+
+Compare it with:
+
+```csharp
+int number = 1;
+
+while (number < 0)
+{
+    MessageBox.Show(number.ToString());
+}
+```
+
+This `while` loop displays nothing because it checks the false condition before entering the body.
+
+**Syntax note:** A `do-while` statement ends with a semicolon after the condition: `} while (condition);`
+
+## 6. Choosing the Right Loop
+
+| Loop | Condition checked | Runs at least once? | Common use |
+|---|---|---|---|
+| `while` | Before the body | No | Repeat while a condition remains true |
+| `for` | Before the body | No | Repeat using a counter |
+| `do-while` | After the body | Yes | Run once before deciding whether to repeat |
+
+## 🧪 Practice Exercises
+
+1. Write a `while` loop that displays numbers 1 through 5.
+2. Write a `for` loop that displays even numbers from 2 through 20.
+3. Write a `for` loop that counts down from 10 to 0.
+4. Predict whether a `while` loop with condition `count < 0` runs when `count = 0`.
+5. Explain why the `do-while` example executes once but the similar `while` example does not.
+6. Find and fix the error in an infinite loop where the counter is never updated.
+
+## ⚠️ Common Mistakes
+
+- Forgetting to increment or decrement the counter.
+- Using the wrong comparison operator, such as `<` instead of `<=`.
+- Updating a counter in a way that can never make the condition false.
+- Forgetting the semicolon at the end of a `do-while` statement.
+- Assuming a `while` loop always runs at least once.
+
+## 🎓 Learning Outcome | Natiijada
+
+By the end of this week, I should be able to choose between `while`, `for`, and `do-while`, trace loop execution, use counter operators, and recognize infinite-loop mistakes.
+
+Toddobaadkan waxaan ku tababartay sida loops-ku u shaqeeyaan, sida counter loo isticmaalo, iyo farqiga u dhexeeya **pretest** iyo **posttest** loops.
 
 ---
 
 **Course:** C# Programming I  
-**Section:** Week Four — File Handling  
-**Purpose:** Practice and learning
+**Section:** Week Four — Loops  
+**Source:** Chapter 4 PowerPoint, *Starting Out with Visual C#*, Sixth Edition  
+**Purpose:** Study notes and practice
