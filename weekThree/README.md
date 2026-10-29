@@ -177,3 +177,146 @@ Waxaan baranayaa sida loo qoro conditions sax ah, loo isticmaalo logical operato
 **Section:** Week Three — Making Decisions  
 **Reference:** *Starting Out with Visual C#, Sixth Edition*, Chapter 4  
 **Purpose:** Study notes and practice
+
+
+---
+
+## 💻 Practical Example — Student Grade Checker
+
+Tusaalahan waa **Windows Forms application** yar oo user-ku ku gelinayo marks-ka ardayga. Program-ku wuxuu hubinayaa in marks-ku sax yihiin, kadibna wuxuu soo bandhigayaa grade-ka.
+
+### 🖼️ Application Design
+
+Visual Studio Designer-ka ku samee Form leh controls-kan:
+
+| Control | Name | Text |
+|---|---|---|
+| Label | `lblPrompt` | Enter Mark (0–100): |
+| TextBox | `txtMark` | *(empty)* |
+| Button | `btnCheckGrade` | Check Grade |
+| Label | `lblResult` | *(empty)* |
+
+**Fiiro gaar ah:** `Name`-ka controls-ka waa inuu la mid noqdaa kan code-ka ku qoran.
+
+### 🧩 Code Example — Button Click Event
+
+Double-click garee button-ka **Check Grade**, kadib geli code-kan gudaha `btnCheckGrade_Click`:
+
+```csharp
+private void btnCheckGrade_Click(object sender, EventArgs e)
+{
+    int mark;
+
+    // Check whether the input is a valid integer.
+    if (!int.TryParse(txtMark.Text, out mark))
+    {
+        MessageBox.Show("Please enter a valid whole number.");
+        txtMark.Focus();
+        return;
+    }
+
+    // Check whether the mark is within the valid range.
+    if (mark < 0 || mark > 100)
+    {
+        MessageBox.Show("Mark must be between 0 and 100.");
+        txtMark.Focus();
+        return;
+    }
+
+    // Decide the grade.
+    if (mark >= 90)
+    {
+        lblResult.Text = "Grade: A";
+    }
+    else if (mark >= 80)
+    {
+        lblResult.Text = "Grade: B";
+    }
+    else if (mark >= 70)
+    {
+        lblResult.Text = "Grade: C";
+    }
+    else if (mark >= 60)
+    {
+        lblResult.Text = "Grade: D";
+    }
+    else
+    {
+        lblResult.Text = "Grade: F — Try again";
+    }
+}
+```
+
+### 🔍 Code Explanation | Sharaxaadda Code-ka
+
+1. `int mark;` — wuxuu diyaarinayaa variable lagu kaydiyo marks-ka.
+2. `int.TryParse()` — wuxuu hubiyaa in input-ku yahay integer; haddii kale, error message ayuu muujinayaa.
+3. `mark < 0 || mark > 100` — wuxuu diidayaa marks ka baxsan 0 ilaa 100.
+4. `return;` — wuxuu joojinayaa method-ka marka input-ku khaldan yahay.
+5. `if / else if / else` — wuxuu dooranayaa grade-ka ku habboon.
+6. `lblResult.Text` — wuxuu natiijada ku soo bandhigayaa Label-ka.
+
+### 📊 Expected Output | Natiijada La Filayo
+
+| Input Mark | Result |
+|---:|---|
+| `95` | Grade: A |
+| `84` | Grade: B |
+| `73` | Grade: C |
+| `65` | Grade: D |
+| `42` | Grade: F — Try again |
+| `hello` | Message: Please enter a valid whole number. |
+| `120` | Message: Mark must be between 0 and 100. |
+
+### 🔀 Decision Flowchart
+
+```mermaid
+flowchart TD
+    A([Start]) --> B[/Enter mark/]
+    B --> C{Is input an integer?}
+    C -- No --> D[Show invalid number message]
+    C -- Yes --> E{Is mark between 0 and 100?}
+    E -- No --> F[Show range error]
+    E -- Yes --> G{Check mark}
+    G -- "90–100" --> H[Grade A]
+    G -- "80–89" --> I[Grade B]
+    G -- "70–79" --> J[Grade C]
+    G -- "60–69" --> K[Grade D]
+    G -- "0–59" --> L[Grade F]
+```
+
+## 📝 Practice Exercises | Layliyo
+
+Isku day layliyadan adigoon marka hore ka raadin jawaabta. Waxay kaa caawinayaan inaad fahanto decision structures.
+
+### Practice 1 — Pass or Fail
+- User-ku ha geliyo mark 0–100.
+- Haddii mark-ku yahay 50 ama ka badan, muuji **Passed**.
+- Haddii uu ka hooseeyo 50, muuji **Failed**.
+- Hubi in input-ku yahay number sax ah oo u dhexeeya 0 iyo 100.
+
+### Practice 2 — Positive, Negative, or Zero
+- Samee TextBox iyo Button.
+- User-ku ha geliyo integer.
+- Isticmaal `if / else if / else` si aad u muujiso inuu yahay **Positive**, **Negative**, ama **Zero**.
+- Isticmaal `int.TryParse()` si looga hortago input khaldan.
+
+### Practice 3 — Login Check
+- Samee TextBox la yiraahdo `txtPassword` iyo Button.
+- Haddii password-ku la mid yahay `"CSharp123"`, muuji **Login successful**.
+- Haddii kale, muuji **Incorrect password**.
+- Isku day inaad isticmaasho string comparison.
+
+### Practice 4 — Switch Statement
+- User-ku ha geliyo number u dhexeeya 1 iyo 7.
+- Isticmaal `switch` si aad u muujiso maalinta usbuuca.
+- Haddii number-ku aanu u dhexayn 1–7, muuji **Invalid day number**.
+
+### ⭐ Challenge — Scholarship Eligibility
+Samee program hubiya:
+- Mark-ku waa inuu noqdaa 0–100.
+- Haddii mark-ku yahay 90 ama ka badan **iyo** attendance-ku yahay 85 ama ka badan, muuji **Eligible for Scholarship**.
+- Haddii kale, muuji **Not Eligible**.
+- Adeegso logical operator-ka `&&` iyo input validation.
+
+> **Rule:** Marka hore adigu isku day. Haddii aad ku xannibanto, soo dir code-kaaga ama screenshot-ka Visual Studio, waxaan kuu sheegi doonaa meesha khaladku yaallo anigoon isla markiiba kuu qaban dhammaan jawaabta.
