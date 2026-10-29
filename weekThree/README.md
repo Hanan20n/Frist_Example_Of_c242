@@ -1,100 +1,179 @@
-# 📂 Week Three — File Handling in C#
+# 📘 Week Three — Making Decisions in C#
 
 ## 📌 Overview | Dulmarka
 
-This folder contains my **Week Three C# practice** focused on working with text files in a Windows Forms Application.
+This folder contains my **Week Three C# practice** based on Chapter 4, **Making Decisions**, from *Starting Out with Visual C# (Sixth Edition)*.
 
-Toddobaadkan waxaan ku tababaranayaa sida C# loogu akhriyo xogta text file, looga saaro item gaar ah, iyo sida loo tirtiro file dhan. Waxaan sidoo kale baranayaa sida file operations loogu xiro Windows Forms controls sida `Button`, `ListBox`, iyo `MessageBox`.
+Cutubkan wuxuu diiradda saarayaa sida program-ku go'aan u gaaro iyadoo la adeegsanayo conditions. Waxaan baranayaa sida C# loogu hubiyo xaalado kala duwan, loo xaqiijiyo user input, loona doorto waxa program-ku qabanayo iyadoo ku xiran xogta la geliyo.
 
 ## 🎯 Learning Objectives | Ujeeddooyinka
 
-- Understand basic file handling using the `System.IO` namespace.
-- Read text files using different methods.
-- Check whether a file exists before using it.
-- Remove a selected item from a text file.
-- Delete a complete file after user confirmation.
-- Display file contents and messages in a Windows Forms interface.
+- Understand decision structures and the `if` statement.
+- Use `if-else` and nested decision structures.
+- Evaluate multiple conditions using logical operators.
+- Work with `bool` variables and flags.
+- Compare strings.
+- Prevent conversion errors using `TryParse()`.
+- Validate user input before processing it.
+- Use `RadioButton`, `CheckBox`, `switch`, and `ListBox` controls.
 
-## 🧰 Methods Practiced | Methods-ka La Tababartay
+## 🧠 Topics Covered | Mawduucyada La Bartay
 
-### 1. `StreamReader` and `File.OpenText()`
+### 1. Decision Structures and `if`
 
-These are used to open and read a text file one line at a time.
+A decision structure runs statements only when a condition is true.
 
-Waxaa la adeegsadaa `ReadLine()` si line kasta loo akhriyo, halka `EndOfStream` lagu hubiyo in dhammaadka file-ka la gaaray.
+Decision structure waa hab uu program-ku ku hubiyo condition. Haddii condition-ku yahay `true`, statements-ka ku jira `if` ayaa la fulinayaa.
 
-### 2. `File.ReadAllLines()`
+```csharp
+if (score >= 50)
+{
+    MessageBox.Show("You passed!");
+}
+```
 
-Reads all lines from a text file and returns them as a string array (`string[]`).
+### 2. The `if-else` Statement
 
-Method-kan wuxuu xogta oo dhan hal mar ugu soo qaadaa array, kadibna `ListBox.Items.AddRange()` ayaa lagu soo bandhigi karaa.
+The `if-else` statement provides two possible paths: one when the condition is true and another when it is false.
 
-### 3. `File.ReadLines()`
+Waxay program-ka u oggolaanaysaa inuu sameeyo hal action haddii shuruuddu sax tahay, iyo action kale haddii aysan sax ahayn.
 
-Reads a file as a sequence of lines, which can be processed using `foreach`.
+```csharp
+if (temperature > 40)
+{
+    MessageBox.Show("Hot");
+}
+else
+{
+    MessageBox.Show("Not hot");
+}
+```
 
-Habkani wuxuu kuu oggolaanayaa inaad line kasta si isdaba-joog ah u process-gareyso, wuxuuna ku habboonaan karaa files waaweyn marka aan loo baahnayn in dhammaan lines-ka hal mar memory-ga la geliyo.
+### 3. Nested Decision Structures
 
-### 4. `File.Exists()`
+Nested decisions mean placing one `if` or `if-else` statement inside another.
 
-Checks whether a file exists at the specified path.
+Waxaa la isticmaalaa marka go'aanka labaad uu ku xiran yahay natiijada go'aanka koowaad.
 
-Waxaa la isticmaalaa ka hor reading ama deleting si loo hubiyo in file-ku jiro, loogana fogaado in operation lagu sameeyo file aan la helin.
+### 4. The `if-else-if` Statement
 
-### 5. Deleting a Selected Item
+This structure checks several conditions in order until one condition is true.
 
-The program reads the file lines into a list, removes the selected item, and writes the remaining lines back to the file.
+Waxay faa'iido leedahay marka la kala saarayo grades ama xaalado badan, tusaale ahaan score A, B, C, D, ama F.
 
-`ListBox.SelectedItem` wuxuu soo helayaa item-ka user-ku doortay. `Remove()` ayaa item-kaas ka saaraya list-ka, halka `File.WriteAllLines()` dib ugu kaydinayo xogta hadhay.
+### 5. Logical Operators
 
-### 6. `File.Delete()`
+Logical operators combine or reverse Boolean conditions.
 
-Deletes the entire file from the specified location.
+- `&&` — AND: labada conditions waa inay true noqdaan.
+- `||` — OR: ugu yaraan hal condition waa inuu true noqdaa.
+- `!` — NOT: wuxuu beddelaa true una beddelaa false, ama lidkeeda.
 
-Ka hor inta aan file-ka la tirtirin, program-ku wuxuu user-ka weydiinayaa confirmation isagoo adeegsanaya `MessageBox.Show()` iyo `DialogResult`. Haddii user-ku doorto `Yes`, file-ka waa la tirtirayaa.
+### 6. `bool` Variables and Flags
 
-## 🖥️ Application Features | Waxyaabaha App-ku Qabanayo
+A `bool` variable stores either `true` or `false`. A flag is used to indicate whether a condition exists.
 
-- Read file contents using three different methods.
-- Display text-file lines in a `ListBox`.
-- Check file existence using `File.Exists()`.
-- Delete a selected line/item from the file.
-- Ask for confirmation before deleting the entire file.
-- Show success and error messages through `MessageBox`.
+`bool` waxaa loo adeegsadaa xaalado leh laba jawaabood, sida `true/false` ama `yes/no`.
 
-## 🛠️ Technologies Used
+### 7. Comparing Strings
+
+Strings can be compared using `==`, `!=`, or `String.Compare()`.
+
+Tani waxay caawisaa marka program-ku hubinayo in text-ka user-ku geliyey uu la mid yahay qoraal kale. Xusuusnow in `==` uu caadi ahaan kala saaro uppercase iyo lowercase.
+
+### 8. Preventing Conversion Exceptions with `TryParse()`
+
+Methods such as `int.TryParse()`, `double.TryParse()`, and `decimal.TryParse()` attempt to convert input without throwing a conversion exception when the input is invalid.
+
+Marka user-ku TextBox geliyo xog, `TryParse()` wuxuu hubiyaa in xogta loo beddeli karo number. Waxaa la isticmaalaa `out` si loo helo natiijada conversion-ka.
+
+```csharp
+int age;
+
+if (int.TryParse(txtAge.Text, out age))
+{
+    MessageBox.Show("Valid number");
+}
+else
+{
+    MessageBox.Show("Please enter a valid age");
+}
+```
+
+### 9. Input Validation
+
+Input validation checks whether entered data is acceptable before the program uses it.
+
+`TryParse()` wuxuu hubiyaa in xogtu number noqon karto, laakiin keligiis ma xaqiijiyo in number-ku macquul yahay. Tusaale ahaan, score waa inuu u dhexeeyaa 0 iyo 100.
+
+```csharp
+if (score >= 0 && score <= 100)
+{
+    // The score is within the valid range.
+}
+```
+
+### 10. Radio Buttons and Check Boxes
+
+- **RadioButton:** usually allows the user to select one option from a group.
+- **CheckBox:** allows the user to turn an option on or off; multiple check boxes can be selected.
+
+Property-ga `Checked` ayaa lagu hubiyaa in control-ka la doortay. `CheckedChanged` event ayaa dhaca marka xaaladda `Checked` is beddesho.
+
+### 11. The `switch` Statement
+
+The `switch` statement chooses a path based on the value of an expression. It can be an alternative to an `if-else-if` structure when comparing one value against several options.
+
+`case` kasta wuxuu matalaa value gaar ah, `break` ayaa joojiya case-ka, halka `default` uu qabto xaaladda aan la helin case ku habboon.
+
+```csharp
+switch (month)
+{
+    case 1:
+        MessageBox.Show("January");
+        break;
+    case 2:
+        MessageBox.Show("February");
+        break;
+    default:
+        MessageBox.Show("Invalid month");
+        break;
+}
+```
+
+### 12. Introduction to `ListBox`
+
+A `ListBox` displays a list of items and can let users select an item.
+
+Properties and methods to remember:
+
+- `Items.Add()` — adds an item.
+- `Items.Count` — returns the number of items.
+- `SelectedItem` — gets the selected item.
+- `SelectedIndex` — gives the selected item's zero-based index; `-1` means no item is selected.
+- `Items.Remove()` — removes a specific item.
+- `Items.RemoveAt()` — removes an item by index.
+- `Items.Clear()` — removes all items.
+
+Waxaa muhiim ah in la hubiyo in item la doortay ka hor inta aan la isticmaalin `SelectedItem`, si looga fogaado errors.
+
+## 🛠️ Technologies and Controls
 
 - **Language:** C#
-- **Application Type:** Windows Forms
 - **IDE:** Microsoft Visual Studio
-- **Namespace:** `System.IO`
-- **File Format:** `.txt`
-
-## ▶️ How to Run | Sida Loo Socodsiiyo
-
-1. Open the project in **Microsoft Visual Studio**.
-2. Make sure the text file exists at the path assigned to `filePath`.
-3. Build and run the Windows Forms Application.
-4. Use the reading buttons to display file contents.
-5. Select an item in the `ListBox` before clicking **Delete Selected Item**.
-6. Only click **Delete Entire File** when you really intend to delete the file.
-
-## ⚠️ Important Notes | Qodobo Muhiim ah
-
-- The `filePath` variable must point to a valid location on your computer.
-- An absolute file path from one computer may not work on another computer.
-- Deleting the entire file is a permanent action unless a backup exists.
-- Use a `using` statement with `StreamReader` to ensure the file is closed properly, even if an error occurs.
-- Clear the `ListBox` before loading the file again to avoid duplicate displayed items.
+- **Application Type:** Windows Forms
+- **Controls:** `TextBox`, `Label`, `MessageBox`, `RadioButton`, `CheckBox`, `ListBox`
+- **Main concepts:** conditions, Boolean expressions, input validation, selection controls
 
 ## 🎓 Learning Outcome | Waxa Aan Bartay
 
-By practicing these methods, I am learning how to work with text files in C# and connect file operations to a graphical user interface.
+By studying this chapter, I am learning how to control program flow, compare values, validate input, and respond to user choices in C#.
 
-Waxaan ku tababartay file reading, checking file existence, deleting individual items, deleting a complete file, iyo isticmaalka `ListBox` iyo `MessageBox` si application-ku ula falgalo user-ka.
+Waxaan baranayaa sida loo qoro conditions sax ah, loo isticmaalo logical operators, looga hortago input conversion errors, loona dhiso Windows Forms applications go'aanno qaadan kara.
 
 ---
 
 **Course:** C# Programming I  
-**Section:** Week Three — File Handling  
-**Purpose:** Practice and learning
+**Section:** Week Three — Making Decisions  
+**Reference:** *Starting Out with Visual C#, Sixth Edition*, Chapter 4  
+**Purpose:** Study notes and practice
